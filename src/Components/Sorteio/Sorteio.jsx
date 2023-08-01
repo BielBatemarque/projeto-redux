@@ -1,13 +1,17 @@
 
 import { Card } from "../Card/Card";
 
-export const Sorteio = () => {
+export const Sorteio = (props) => {
+    const min = props.minimo;
+    const max = props.maximo;
+    const aleatorio = Math.random() * (max - min);
+
     return(
         <Card title={'Sorteio de um Número'} purple>
             <div>
                 <span>
                     <span>Resultado:</span>
-                    <strong>9</strong>
+                    <strong>{Math.floor(aleatorio)}</strong>
                 </span>
             </div>
         </Card>

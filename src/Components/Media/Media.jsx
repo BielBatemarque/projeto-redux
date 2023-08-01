@@ -1,12 +1,15 @@
 import { Card } from "../Card/Card";
 
-export const Media = () => {
+export const Media = (props) => {
+    const min = props.minimo;
+    const max = props.maximo;
+
     return(
         <Card title={'Média dos Números'} green>
             <div>
                 <span>
                     <span>Resultado:</span>
-                    <strong>5</strong>
+                    <strong>{(max + min)/2}</strong>
                 </span>
             </div>
         </Card>
