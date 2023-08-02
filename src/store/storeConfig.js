@@ -9,6 +9,11 @@ const reducers = combineReducers({
           ...state,
           min:action.payload,
         }
+      case 'NUM_MAX_ALTERADO':
+      return {
+        ...state,
+        max: action.payload,
+      }
       default:
         return {
           min: 7,
@@ -16,7 +21,7 @@ const reducers = combineReducers({
         };
     }
   },
-  
+
   nomes: function (state, action) {
     console.log('reducer de nomes foi chamado');
     console.log(state, ' ', action);
