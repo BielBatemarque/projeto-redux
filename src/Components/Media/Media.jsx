@@ -3,7 +3,7 @@ import { Card } from "../Card/Card";
 
 function Media (props) {
     const {min, max} = props;
-    console.log((max + min) / 2)
+    // console.log((max + min) / 2);
     
     return(
         <Card title={'Média dos Números'} green>
