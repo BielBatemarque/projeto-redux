@@ -11,11 +11,11 @@ const Intervalo = (props) => {
             <div className='Intervalo'>
                 <span>
                     <strong>Mínimo:</strong>
-                    <input type="number"  value={min} />
+                    <input type="number"  value={min} onChange={e => props.alterarMinimo(+e.target.value)}/>
                 </span>
                 <span>
                     <strong>Máximo:</strong>
-                    <input type="number" value={max} />
+                    <input type="number" value={max} readOnly/>
                 </span>
             </div>
         </Card>
@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapActionCreatorsToprops = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         alterarMinimo(novoNumero){
             //action creator => action
@@ -41,4 +41,4 @@ const mapActionCreatorsToprops = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapActionCreatorsToprops)(Intervalo);
+export default connect(mapStateToProps, mapDispatchToProps)(Intervalo);
