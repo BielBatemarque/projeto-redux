@@ -1,36 +1,10 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-const reducers = combineReducers({
-  numeros: function (state, action) {
-    switch(action.type){
-      case 'NUM_MIN_ALTERADO':
-        return {
-          ...state,
-          min:action.payload,
-        }
-      case 'NUM_MAX_ALTERADO':
-      return {
-        ...state,
-        max: action.payload,
-      }
-      default:
-        return {
-          min: 7,
-          max: 31,
-        };
-    }
-  },
+import numereosReducer from './reducers/numeros';
 
-  nomes: function (state, action) {
-    console.log('reducer de nomes foi chamado');
-    console.log(state, ' ', action);
-    return [
-      'Ana',
-      'Bia',
-      'Carlos'
-    ];
-  }
+const reducers = combineReducers({
+  numeros: numereosReducer,
 });
 
 const store = configureStore({ reducer: reducers });
